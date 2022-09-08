@@ -2,10 +2,7 @@ import flatpickr from 'flatpickr';
 import Notiflix from 'notiflix';
 import 'flatpickr/dist/flatpickr.min.css';
 
-const spanDays = document.querySelector('[data-days]');
-const spanHours = document.querySelector('[data-hours]');
-const spanMinutes = document.querySelector('[data-minutes]');
-const spanSeconds = document.querySelector('[data-seconds]');
+const spanTime = document.getElementsByClassName('value');
 const btnStart = document.querySelector('[data-start]');
 const input = document.querySelector('#datetime-picker');
 
@@ -43,11 +40,11 @@ function addTimer() {
   }
 
   const { days, hours, minutes, seconds } = convertMs(timeLeft);
+  const arrayTimeLeft = [days, hours, minutes, seconds];
 
-  spanDays.innerHTML = addLeadingZero(days);
-  spanHours.innerHTML = addLeadingZero(hours);
-  spanMinutes.innerHTML = addLeadingZero(minutes);
-  spanSeconds.innerHTML = addLeadingZero(seconds);
+  arrayTimeLeft.forEach(
+    (timeItem, ind) => (spanTime[ind].innerHTML = addLeadingZero(timeItem))
+  );
 }
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
