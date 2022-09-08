@@ -18,8 +18,9 @@ img {
 }
 
 .timer {
+  margin-top: 10px;
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .field {
@@ -28,9 +29,11 @@ img {
   align-content: stretch;
   justify-content: space-evenly;
   align-items: center;
+  font-size: 12px;
 }
 
 .value {
-  font-size: large;
-  font-style: normal;
+  font-size: 20px;
+
+  font-weight: 600;
 }
